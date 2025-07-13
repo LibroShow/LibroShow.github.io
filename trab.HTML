@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineShow - Las mejores películas en cartelera</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="/css/estilo.css">
+</head>
+<body>
+    <!-- Header/Navbar -->
+    <header class="bg-black bg-opacity-90 fixed w-full z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <i class="fas fa-film text-3xl text-sky blue-500mr-2"></i>
+                <h1 class="title-font text-3xl text-sky blue-500">Cine<span class="text-white">Show</span></h1>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#cartelera" class="text-white hover:text-sky blue-500 transition">Cartelera</a>
+                <a href="#proximos" class="text-white hover:text-sky blue-500 transition">Próximos Estrenos</a>
+                <a href="#contacto" class="text-white hover:text-sky blue-500 transition">Contacto</a>
+            </nav>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="index.html" class="text-white hover:text-sky blue-500 transition">inicio</a>
+                <a href="practica.html" class="text-white hover:text-sky blue-500 transition">anime</a>
+                <a href="libros.html" class="text-white hover:text-sky blue-500 transition">libro</a>
+            </nav>
+
+            <nav class="hidden md:flex space-x-8">
+                <a href="peli.html" class="text-white hover:text-sky blue-500 transition"> Click para ver pelicula</a>
+
+            </nav>
+
+            <button class="md:hidden text-white">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero h-[70vh] flex items-center justify-center pt-24">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="title-font text-5xl md:text-7xl mb-4 text-sky blue-500flicker">VIVE LA MAGIA DEL CINE</h2>
+            <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Descubre las películas más esperadas del año en la mejor calidad y comodidad</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#cartelera" class="bg-sky blue-500 hover:bg-sky blue-500 text-black font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+                    Ver Cartelera
+                </a>
+                <a href="#proximos" class="bg-transparent hover:bg-white hover:bg-opacity-10 border-2 border-white text-white font-bold py-3 px-6 rounded-lg transition transform hover:scale-105">
+                    Próximos Estrenos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cartelera Section -->
+    <section id="cartelera" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-4xl md:text-5xl mb-12 text-center text-sky blue-500">PELÍCULAS EN CARTELERA</h2>
+            
+            <div class="flex justify-center mb-8">
+                <div class="inline-flex rounded-md shadow-sm">
+                    <button class="tab-button active px-4 py-2 text-sm font-medium" data-category="all">
+                        Todas
+                    </button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium" data-category="action">
+                        Acción
+                    </button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium" data-category="drama">
+                        terror
+                    </button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium" data-category="comedy">
+                        Comedia
+                    </button>
+                    <button class="tab-button px-4 py-2 text-sm font-medium" data-category="fantasy">
+                        Fantasía
+                    </button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="movies-container">
+                <!-- Movie cards will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Próximos Estrenos Section -->
+    <section id="proximos" class="py-16 bg-black">
+        <div class="container mx-auto px-4">
+            <h2 class="title-font text-4xl md:text-5xl mb-12 text-center text-sky blue-500">PRÓXIMOS ESTRENOS</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Upcoming Movie 1 -->
+                <div class="movie-card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="movie-poster relative">
+                        <img src="/img/peli 4.jpg" alt="Dune: Parte Dos" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute top-4 right-4 bg-sky blue-500 text-black font-bold px-3 py-1 rounded-full text-sm">
+                            PRÓXIMAMENTE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">EL Conjuro 3</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="bg-sky blue-500 text-black text-xs font-semibold px-2 py-1 rounded mr-2">terror</span>
+                            <span class="text-gray-400 text-sm">15 de marzo, 2024</span>
+                        </div>
+                        <p class="text-gray-300 mb-4"> Basada en hechos reales, esta entrega narra uno de los casos más escalofriantes de Ed y Lorraine Warren. Un juicio por asesinato se convierte en el primer caso en EE. UU. donde la posesión demoníaca es utilizada como defensa legal.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="days-dune">09</span>
+                                    <span class="text-xs">Días</span>
+                                </div>
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="hours-dune">2:00</span>
+                                    <span class="text-xs">Horas</span>
+                                </div>
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="minutes-dune">50</span>
+                                    <span class="text-xs">Min</span>
+                                </div>
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="seconds-dune">6</span>
+                                    <span class="text-xs">Seg</span>
+                                </div>
+                            </div>
+                            <button class="bg-sky blue-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition">
+                                Recordar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Upcoming Movie 2 -->
+                <div class="movie-card bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                    <div class="movie-poster relative">
+                        <img src="/img/peli 1.jpg" alt="The Marvels" class="w-full h-64 md:h-80 object-cover">
+                        <div class="absolute top-4 right-4 bg-sky blue-500 text-black font-bold px-3 py-1 rounded-full text-sm">
+                            PRÓXIMAMENTE
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold mb-2">EUROTRIP</h3>
+                        <div class="flex items-center mb-4">
+                            <span class="bg-sky blue-500 text-black text-xs font-semibold px-2 py-1 rounded mr-2">Comedia</span>
+                            <span class="text-gray-400 text-sm">10 de noviembre, 2023</span>
+                        </div>
+                        <p class="text-gray-300 mb-4">es una comedia que sigue las aventuras de un grupo de amigos que deciden viajar por Europa. La historia comienza cuando Scott, un adolescente estadounidense, descubre que su amor platónico, una chica llamada Fiona, está en Europa.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex space-x-2">
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="days-marvels">15</span>
+                                    <span class="text-xs">Días</span>
+                                </div>
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="hours-marvels">1:00</span>
+                                    <span class="text-xs">Horas</span>
+                                </div>
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="minutes-marvels">50</span>
+                                    <span class="text-xs">Min</span>
+                                </div>
+                                <div class="countdown-item flex flex-col items-center justify-center w-12 h-12 rounded-lg">
+                                    <span class="text-lg font-bold" id="seconds-marvels">60</span>
+                                    <span class="text-xs">Seg</span>
+                                </div>
+                            </div>
+                            <button class="bg-sky blue-500 hover:bg-yellow-600 text-black font-bold py-2 px-4 rounded transition">
+                                Recordar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+ 
+    <script>
+        // Movie data
+        const movies = [
+            {
+                id: 1,
+                title: "La OUIJA",
+                genre: "drama",
+                releaseDate: "21 de julio, 2025",
+                description: " La historia se centra en una madre viuda, Alice, y sus dos hijas, quienes realizan trucos de espiritismo para engañar a sus clientes. Sin embargo, cuando deciden usar una tabla Ouija como parte de su espectáculo, desatan fuerzas oscuras que ponen en peligro sus vidas..",
+                imageUrl: "/img/peli 3.jpg",
+                videoUrl:"https://youtu.be/rwMkqnMNKa8",
+                rating: 4.5
+            },
+            {
+                id: 2,
+                title: "Supercool",
+                genre: "comedy",
+                releaseDate: "25 de julio, 2025",
+                description: " Dos amigos inseparables están por graduarse del instituto. Su misión: conseguir alcohol y ser parte de una fiesta épica para conquistar a sus chicas soñadas.",
+                imageUrl: "/img/peli 2.jpg",
+                videoUrl:"https://youtu.be/UakRRwzQHgA",
+                rating: 4.2
+            },
+            {
+                id: 3,
+                title: "Los Simpson: La Película",
+                genre: "comedy",
+                releaseDate: "12 de julio, 2025",
+                description: " sigue las aventuras de la familia Simpson cuando Homer, tras un acto de imprudencia, provoca una crisis ambiental en Springfield. El pueblo es colocado bajo un domo, y la familia debe encontrar una manera de salvar a su comunidad y a ellos mismos..",
+                imageUrl: "/img/peli 5.jpg",
+                rating: 4.3
+            },
+            {
+                id: 4,
+                title: "Elemental",
+                genre: "comedy",
+                releaseDate: "16 de junio, 2025",
+                description: "En una ciudad donde los residentes de fuego, agua, tierra y aire viven juntos, una joven apasionada y un chico que vive el momento descubren algo elemental.",
+                imageUrl: "/img/peli 6.jpg",
+                rating: 3.9
+            },
+            {
+                id: 5,
+                title: "Minecraft",
+                genre: "action",
+                releaseDate: "2 de junio, 2023",
+                description: " Un grupo de aventureros debe salvar el mundo del temido Ender Dragon tras la destrucción de su aldea. Basada en el famoso video juego.",
+                imageUrl: "/img/peli 7.jpg",
+                rating: 4.7
+            },
+            {
+                id: 6,
+                title: "La Princesa Mononoke ",
+                genre: "fantasy",
+                releaseDate: "30 de mayo, 2025",
+                description: "Ashitaka, un joven guerrero, se ve envuelto en la lucha entre los humanos que destruyen la naturaleza y los dioses animales.",
+                imageUrl: "/img/peli 8.jpg",
+                rating: 3.8
+            },
+            {
+                id: 7,
+                title: "Evil Dead Rise",
+                genre: "drama",
+                releaseDate: "13 de mayo, 2025",
+                description: " La historia se centra en dos hermanas, que se reencuentran en un momento crítico. Cuando un antiguo libro de los muertos es descubierto, desata fuerzas demoníacas que amenazan con destruir todo a su paso.",
+                imageUrl: "/img/peli 9.jpg",
+                rating: 4.0
+            },
+            {
+                id: 8,
+                title: "Need for Speed",
+                genre: "action",
+                releaseDate: "5 de mayo, 2025",
+                description: " un mecánico y corredor de coches que se ve involucrado en una conspiración tras la muerte de su amigo. Después de ser falsamente acusado y cumplir una condena en prisión, Tobey busca venganza y redención al competir en una carrera clandestina a través de Estados Unidos . ",
+                imageUrl: "/img/peli 10.jpg",
+                rating: 4.4
+            }
+        ];
+         
+        // Function to render movies
+        function renderMovies(filter = 'all') {
+            const container = document.getElementById('movies-container');
+            container.innerHTML = '';
+            
+            const filteredMovies = filter === 'all' 
+                ? movies 
+                : movies.filter(movie => movie.genre === filter);
+            
+            filteredMovies.forEach(movie => {
+                const stars = [];
+                const fullStars = Math.floor(movie.rating);
+                const hasHalfStar = movie.rating % 1 >= 0.5;
+                
+                for (let i = 0; i < 5; i++) {
+                    if (i < fullStars) {
+                        stars.push('<i class="fas fa-star text-sky blue-500"></i>');
+                    } else if (i === fullStars && hasHalfStar) {
+                        stars.push('<i class="fas fa-star-half-alt text-sky blue-500"></i>');
+                    } else {
+                        stars.push('<i class="far fa-star text-sky blue-500"></i>');
+                    }
+                }
+                
+                const movieCard = `
+                    <div class="movie-card bg-gray-800 rounded-lg overflow-hidden shadow-lg" data-genre="${movie.genre}">
+                        <div class="movie-poster relative">
+                            <img src="${movie.imageUrl}" alt="${movie.title}" class="w-full h-64 object-cover">
+                            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black to-transparent">
+                                <div class="flex items-center">
+                                    ${stars.join('')}
+                                    <span class="ml-2 text-white">${movie.rating.toFixed(1)}</span>
+                                </div>
+                            </div>
+                       
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold mb-2">${movie.title}</h3>
+                            <div class="flex items-center mb-4">
+                                <span class="bg-sky blue-500 text-black text-xs font-semibold px-2 py-1 rounded mr-2">
+                                    ${movie.genre === 'action' ? 'Acción' : 
+                                      movie.genre === 'drama' ? 'Drama' : 
+                                      movie.genre === 'comedy' ? 'Comedia' : 'Fantasía'}
+                                </span>
+                                <span class="text-gray-400 text-sm">${movie.releaseDate}</span>
+                            </div>
+                            <p class="text-gray-300 mb-4">${movie.description}</p>
+                          
+
+                           
+                        </div>
+                    </div> </div>
+                `;
+                
+                container.innerHTML += movieCard;
+            });
+        }
+
+        // Tab functionality
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                renderMovies(button.dataset.category);
+            });
+        });
+
+        // Countdown functionality
+        function updateCountdown() {
+            // Dune countdown (March 15, 2024)
+            const duneDate = new Date('2024-03-15').getTime();
+            updateSingleCountdown(duneDate, 'dune');
+            
+            // The Marvels countdown (November 10, 2023)
+            const marvelsDate = new Date('2023-11-10').getTime();
+            updateSingleCountdown(marvelsDate, 'marvels');
+        }
+
+        function updateSingleCountdown(targetDate, prefix) {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+            
+            if (distance < 0) {
+                document.getElementById(`days-${prefix}`).textContent = '00';
+                document.getElementById(`hours-${prefix}`).textContent = '00';
+                document.getElementById(`minutes-${prefix}`).textContent = '00';
+                document.getElementById(`seconds-${prefix}`).textContent = '00';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            document.getElementById(`days-${prefix}`).textContent = days.toString().padStart(2, '0');
+            document.getElementById(`hours-${prefix}`).textContent = hours.toString().padStart(2, '0');
+            document.getElementById(`minutes-${prefix}`).textContent = minutes.toString().padStart(2, '0');
+            document.getElementById(`seconds-${prefix}`).textContent = seconds.toString().padStart(2, '0');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            renderMovies();
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+            
+            // Smooth scrolling for navigation
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

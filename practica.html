@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LibroShow - Anime</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="./css/estilos.css" />
+</head>
+<body class="bg-[url('fondos.jpg')] bg-cover bg-fixed bg-center text-white">
+
+  <!-- Navbar -->
+  <header class="bg-black bg-opacity-90 fixed w-full z-50 shadow-lg">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center">
+        <i class="fas fa-dragon text-3xl text-cyan-300 mr-2"></i>
+        <h1 class="title-font text-3xl text-cyan-300">Anime<span class="text-white">Show</span></h1>
+      </div>
+      <nav class="hidden md:flex space-x-6">
+        <a href="./index.html" class="text-white hover:text-cyan-300">Inicio</a>
+        <a href="./libros.html" class="text-white hover:text-cyan-300">libros</a>
+        <a href="./trab.HTML" class="text-white hover:text-cyan-300">Películas</a>
+      </nav>
+      <div class="hidden md:block">
+        <select id="genero-selector" class="bg-gray-800 text-white px-3 py-2 rounded-md">
+          <option value="todos">Todos los géneros</option>
+          <option value="accion">Acción</option>
+          <option value="aventura">Aventura</option>
+          <option value="fantasia">Fantasía</option>
+          <option value="sobrenatural">Sobrenatural</option>
+          <option value="romance">Romance</option>
+          <option value="comedia">Comedia</option>
+          <option value="drama">Drama</option>
+          <option value="ciencia">Ciencia Ficción</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+    <section class="hero h-[70vh] flex items-center justify-center pt-24">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="title-font text-5xl md:text-6xl mb-4 text-cyan-300 flicker">DESCUBRE LOS MEJORES ANIMES</h2>
+      <p class="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">Explora mundos increíbles, batallas épicas y emociones que solo el anime puede ofrecer.</p>
+    </div>
+  </section>
+
+  <!-- Buscador -->
+  <div class="container mx-auto px-4 py-4 text-center">
+    <input type="text" id="busqueda" placeholder="Buscar anime..." class="px-4 py-2 rounded-md text-black w-full max-w-lg" onkeyup="buscarAnime()">
+  </div>
+
+  <!-- Anime Cards -->
+  <main class="container mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="anime-list">
+    <!-- Ejemplo de tarjeta -->
+    <div class="anime-card libro bg-black bg-opacity-70 rounded-xl overflow-hidden shadow-lg p-4" data-genero="accion aventura fantasia">
+      <img src="imagen-ejemplo.jpg" alt="Demon Slayer" class="w-full h-48 object-cover rounded-md mb-4">
+      <h3 class="text-xl font-bold text-cyan-300 mb-2">Demon Slayer</h3>
+      <p><strong>Género:</strong> Acción, Fantasía, Aventura</p>
+      <p class="text-sm mt-2">Tanjiro Kamado lucha contra demonios para salvar a su hermana. Una historia de coraje, familia y redención.</p>
+    </div>
+
+    <!-- Repite con más tarjetas usando clases similares y data-genero -->
+    <!-- ... -->
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-muy-oscuro text-claro text-center py-6">
+    <p>&copy; 2025 LibroShow. Todos los derechos reservados.</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    document.getElementById('genero-selector').addEventListener('change', function () {
+      filtrarPor(this.value);
+    });
+
+    function filtrarPor(genero) {
+      const cards = document.querySelectorAll(".anime-card");
+      cards.forEach(card => {
+        const generos = card.getAttribute("data-genero");
+        if (genero === "todos" || generos.includes(genero)) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
+        }
+      });
+    }
+
+    function buscarAnime() {
+      const input = document.getElementById('busqueda').value.toLowerCase();
+      const cards = document.querySelectorAll('.anime-card');
+
+      cards.forEach(card => {
+        const texto = card.innerText.toLowerCase();
+        card.style.display = texto.includes(input) ? 'block' : 'none';
+      });
+    }
+  </script>
+</body>
+</html>
