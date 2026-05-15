@@ -1,48 +1,95 @@
+<!-- =========================
+HTML
+========================= -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quisis Nica 🇳🇮 Dinámico</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Batalla de Vacunas RPG</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="quiz-container" id="quiz-container">
+<div class="menu-screen" id="menuScreen">
 
-        <div id="start-screen">
-            <h1>🇳🇮 Quisis Nica 🇳🇮</h1>
-            <p>¡Demostrá cuánto sabés de Nicaragua en 10 preguntas al azar!</p>
-            <button id="start-btn">¡Empezar a Jugar!</button>
-        </div>
+    <h1>🛡️ Batalla de Vacunas RPG</h1>
 
-        <div id="quiz-area" style="display: none;">
-            <div class="quiz-header">
-                <span id="question-counter">Pregunta 1 / 10</span>
-                <span id="score">Puntaje: 0</span>
+    <h2>Configura el orden de tus ataques</h2>
+
+    <div id="attackList"></div>
+
+    <button class="start-btn" onclick="startGame()">
+        ▶️ Comenzar Batalla
+    </button>
+
+</div>
+
+<div class="game-container hidden" id="gameContainer">
+
+    <h1>💉 Batalla de Vacunas</h1>
+
+    <div class="level" id="level">
+        Nivel 1
+    </div>
+
+    <div class="battle-scene">
+
+        <div class="fighter-area player-side">
+
+            <div class="fighter vaccine" id="player">
+                💉
             </div>
 
-            <div id="question-area">
-                <h2 id="question-text">Cargando pregunta...</h2>
-                <div id="options-grid" class="options-grid">
-                    </div>
-            </div>
+            <div class="info-box">
 
-            <div id="feedback-area">
+                <h2 id="vaccineName">
+                    Vacuna Protectora
+                </h2>
+
+                <div class="health-bar">
+                    <div class="health player-health" id="playerHealth"></div>
                 </div>
 
-            <button id="next-btn" style="display: none;">Siguiente Pregunta</button>
+                <p id="playerHpText">100 HP</p>
+
+            </div>
+
         </div>
-        
-        <div id="results-container" class="results-container" style="display: none;">
-            <h2>¡Juego Terminado!</h2>
-            <p id="final-score-text">Tu puntaje final es 0 de 10.</p>
-            <p id="final-message">¡Seguí intentando!</p>
-            <button id="restart-btn">Empezar de Nuevo</button>
+
+        <div class="fighter-area enemy-side">
+
+            <div class="fighter virus" id="enemy">
+                🦠
+            </div>
+
+            <div class="info-box">
+
+                <h2 id="enemyName">
+                    Virus
+                </h2>
+
+                <div class="health-bar">
+                    <div class="health enemy-health" id="enemyHealth"></div>
+                </div>
+
+                <p id="enemyHpText">100 HP</p>
+
+            </div>
+
         </div>
 
     </div>
 
-    <script src="script.js"></script>
+    <div class="buttons" id="buttonsContainer"></div>
+
+    <div class="message-box" id="message">
+        ¡Prepárate para proteger el cuerpo!
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>
